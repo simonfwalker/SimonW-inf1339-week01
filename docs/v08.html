@@ -1,22 +1,5 @@
 <html>
-<head>
 <title>Version 8</title>
-<style></style>
-<script></script>
-</head>
-<body>
-<h3>Hello Universe. This is my 7 Segment Display Driver Simulation</h3>
-</body>
-</html>
-<h4>Get the input via a keypad</h4>
-<button type="button">1</button><button type="botton">2</button><button type="botton">3</button><br \>
-<button type="botton">4</button><button type="botton">5</button><button type="botton">6</button><br \>
-<button type="botton">7</button><button type="botton">8</button><button type="botton">9</button><br \>
-<button type="botton">0</button>
-<h4>Convert the decimal input into a binary number</h4>
-<h4>Convert the binary number into a signal showing which segments to illuminate</h4>
-<h4>Illuminate the designated segments</h4>
-<html>
     <head>
     <style>
         .standardTable {border: solid;
@@ -37,9 +20,9 @@
             document.getElementById("binary_output").innerHTML=bin
             
             //send binary number to function bin2ssd()
-            document.getElementById("bin2ssd_input").innerHTML=bin
+            document.getElementById("binary2ssd_input").innerHTML=bin
             var ssd = bin2ssd(bin)
-            document.getElementById("bin2ssd_output").innerHTML=ssd
+            document.getElementById("binary2ssd_output").innerHTML=ssd
             
             //send ssd signals to function illuminate_segments()
             document.getElementById("illuminate_input").innerHTML=ssd
