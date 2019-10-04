@@ -48,12 +48,12 @@
             //our expression for A was ~wxz + w~x~y + ~x~y~z + ~wy
                var a = !w&x&z || w&!x&!y || !x&!y&!z || !w&y
             //the remainder of the expressions are left as an exercise
-               var b = false
-               var c = false
-               var d = false
-               var e = false
-               var f = false
-               var g = false
+               var b = !w&!x&!y || !w&!x&!y || !w&x || !y&!z
+               var c = !w&!y || !y || !w&x&y || !w&y&z
+               var d = !w&!x&!y&!z || w&!x&!y || !y&!z || !w&!x&y || !w&y&!z
+               var e = !w&y&!z || !w&!x&!y&!z || w&!x&!y&!z
+               var f = !y || !w&!x || !w&!y&!z
+               var g = !y || !w&!z || !w&!x&y
             //assemble and return the output
             //we will build up the output string element by element
                var output = ''
