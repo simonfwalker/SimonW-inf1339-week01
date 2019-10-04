@@ -27,11 +27,10 @@
             document.getElementById("binary2ssd_input").innerHTML=bin
             var ssd = bin2ssd(bin)
             document.getElementById("binary2ssd_output").innerHTML=ssd
-            
-            //send ssd signals to function illuminate_segments()
-            document.getElementById("illuminate_input").innerHTML=ssd
+            var ssd=bin2ssd(bin)
             illuminate(ssd)
-            document.getElementById("illuminate_output").innerHTML='done'
+            //send ssd signals to function illuminate_segments()
+            document.getElementById("segments").innerHTML=signals
         }
         
         function bin2ssd(binary) {
@@ -47,13 +46,12 @@
             //"compute" the value of logical expression for each segment
             //our expression for A was ~wxz + w~x~y + ~x~y~z + ~wy
                var a = !w&x&z || w&!x&!y || !x&!y&!z || !w&y
-            //the remainder of the expressions are left as an exercise
-               var b = !w&!x&!y || !w&!x&!y || !w&x || !y&!z
-               var c = !w&!y || !y || !w&x&y || !w&y&z
-               var d = !w&!x&!y&!z || w&!x&!y || !y&!z || !w&!x&y || !w&y&!z
-               var e = !w&y&!z || !w&!x&!y&!z || w&!x&!y&!z
-               var f = !y || !w&!x || !w&!y&!z
-               var g = !y || !w&!z || !w&!x&y
+               var b = !w&!x&!y || !w&!y&!z || !w&!x&y || w&!x&!y || !w&y&z
+               var c = !w&!y || !w&z || !w&x&y || w&!x&!y
+               var d = !x&!y&!z || w&!x&!y || !w&x&!y&z || !w&!x&y || !w&y&!z
+               var e = !x&!y&!z || !w&y&!z
+               var f = !w&!y&!z || !w&x&!y || !w&x&!z || w&!x&!y
+               var g = w&!x&!y || !w&x&!y || !w&!x&y || !w&y&!z
             //assemble and return the output
             //we will build up the output string element by element
                var output = ''
